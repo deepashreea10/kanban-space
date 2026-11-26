@@ -1,0 +1,17 @@
+.sidebar { display: flex; flex-direction: column; gap: 12px; width: 260px; flex-shrink: 0; padding: 20px 16px; background: var(--sidebar); border-right: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 10px; font: 700 1.15rem 'Manrope', sans-serif; margin-bottom: 12px; }
+.brand-light { font-weight: 500; color: var(--muted); }
+.brand-mark { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: var(--primary); color: var(--on-primary); }
+.nav-heading { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 0.8rem; font-weight: 600; }
+.icon-btn { width: 26px; height: 26px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font-size: 1.1rem; }
+.icon-btn:hover { background: var(--icon-hover-bg); color: var(--icon-hover-text); }
+.board-create { display: flex; gap: 6px; }
+.board-create input { flex: 1; min-width: 0; padding: 7px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); }
+.board-create button { padding: 7px 12px; border: 0; border-radius: 8px; background: var(--primary); color: var(--on-primary); }
+nav { display: flex; flex-direction: column; gap: 4px; }
+.board-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 0; border-radius: 9px; background: transparent; color: var(--nav-text); text-align: left; }
+.board-link:hover { background: var(--nav-hover-bg); color: var(--nav-hover-text); }
+.board-link.active { background: var(--nav-active-bg); color: var(--nav-active-text); font-weight: 600; }
+.sidebar-bottom { margin-top: auto; }
+.sidebar-bottom .theme-toggle { width: 100%; }
+@media (max-width: 700px) { .sidebar { width: 100%; border-right: 0; border-bottom: 1px solid var(--border); } }
