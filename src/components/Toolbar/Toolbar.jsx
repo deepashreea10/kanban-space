@@ -19,7 +19,7 @@ function Toolbar() {
       </div>
       {ui.view === 'board' && (
         <div className="filters">
-          <input type="search" value={ui.search} onChange={(e) => ui.setSearch(e.target.value)} placeholder="Search tasks…" aria-label="Search tasks" />
+          <input ref={ui.searchRef} type="search" value={ui.search} onChange={(e) => ui.setSearch(e.target.value)} placeholder="Search tasks…  ( / )" aria-label="Search tasks" />
           <select value={ui.priorityFilter} onChange={(e) => ui.setPriorityFilter(e.target.value)} aria-label="Filter by priority">
             <option value="All">All priorities</option>
             {PRIORITIES.map((p) => <option key={p}>{p}</option>)}

@@ -5,7 +5,11 @@ import { makeSeed } from '../utils/seed';
 
 const STORAGE_KEY = 'kanbanspace-workspace-v2';
 
-// Runs once: saved data if valid, otherwise the seed board.
+// Importing replaces everything, so it is handled here at the root,
+// before the normal reducer sees the action.
+const rootReducer = (state, action) =>
+  action.type === 'REPLACE_WORKSPACE' ? action.state : workspaceReducer(state, action);
+
 function init() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -17,7 +21,7 @@ function init() {
 }
 
 export function WorkspaceProvider({ children }) {
-  const [state, dispatch] = useReducer(workspaceReducer, undefined, init);
+  const [state, dispatch] = useReducer(rootReducer, undefined, init);
 
   useEffect(() => {
     try {
@@ -27,9 +31,5 @@ export function WorkspaceProvider({ children }) {
     }
   }, [state]);
 
-  return (
-    <WorkspaceContext.Provider value={{ state, dispatch }}>
-      {children}
-    </WorkspaceContext.Provider>
-  );
+  return <WorkspaceContext.Provider value={{ state, dispatch }}>{children}</WorkspaceContext.Provider>;
 }

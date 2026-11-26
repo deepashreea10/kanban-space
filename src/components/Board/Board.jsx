@@ -6,6 +6,7 @@ import { useBoardStats } from '../../hooks/useBoardStats';
 import { filterColumns } from '../../utils/filters';
 import OverviewRow from '../Overview/OverviewRow';
 import Toolbar from '../Toolbar/Toolbar';
+import TopActions from '../TopActions/TopActions';
 import Analytics from '../Analytics/Analytics';
 import TaskModal from '../TaskModal/TaskModal';
 import Column from './Column';
@@ -13,14 +14,13 @@ import './Board.css';
 
 function Board() {
   const { columns, activeBoard, dispatch } = useWorkspace();
-  const { view, search, priorityFilter } = useUI();
+  const ui = useUI();
   const { activeTag } = useBoardStats();
   const drag = useDragAndDrop(dispatch);
-  const [modal, setModal] = useState(null); // { columnId, task? }
   const [addingColumn, setAddingColumn] = useState(false);
   const [columnName, setColumnName] = useState('');
 
-  const visibleColumns = filterColumns(columns, { search, priority: priorityFilter, tag: activeTag });
+  const visibleColumns = filterColumns(columns, { search: ui.search, priority: ui.priorityFilter, tag: activeTag });
 
   const addColumn = (e) => {
     e.preventDefault();
@@ -34,11 +34,11 @@ function Board() {
     <main className="board-area">
       <div className="board-head">
         <h1 className="board-title">{activeBoard?.name}</h1>
-        <button className="btn-primary" onClick={() => setModal({ columnId: columns[0]?.id })}>+ New task</button>
+        <TopActions />
       </div>
       <OverviewRow />
       <Toolbar />
-      {view === 'analytics' ? (
+      {ui.view === 'analytics' ? (
         <Analytics />
       ) : (
         <div className="columns">
@@ -48,8 +48,8 @@ function Board() {
               column={column}
               canDelete={columns.length > 1}
               drag={drag}
-              onAdd={(columnId) => setModal({ columnId })}
-              onEdit={(task, columnId) => setModal({ columnId, task })}
+              onAdd={(columnId) => ui.openTask(columnId)}
+              onEdit={(task, columnId) => ui.openTask(columnId, task)}
             />
           ))}
           <div className="add-column">
@@ -64,8 +64,8 @@ function Board() {
           </div>
         </div>
       )}
-      {modal && (
-        <TaskModal key={modal.task?.id || 'new'} task={modal.task} columnId={modal.columnId} onClose={() => setModal(null)} />
+      {ui.taskModal && (
+        <TaskModal key={ui.taskModal.task?.id || 'new'} task={ui.taskModal.task} columnId={ui.taskModal.columnId} onClose={ui.closeTask} />
       )}
     </main>
   );

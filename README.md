@@ -1,16 +1,32 @@
-# React + Vite
+# Kanbanspace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-board Kanban workspace built with React and Vite. Live demo: **ADD-YOUR-VERCEL-LINK**
 
-Currently, two official plugins are available:
+![Board view](docs/board.png)
+![Analytics view](docs/analytics.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Multiple boards with add, rename and delete columns
+- Tasks with priority, tag, due date and subtasks (progress on each card)
+- Drag and drop between and within columns, with a drop indicator
+- Search plus priority and tag filters; overview of total, completed and progress
+- Analytics view: open, overdue and due-soon counts, bar charts, upcoming deadlines
+- Command palette (Ctrl+K) and keyboard shortcuts (press `?`)
+- Light and dark theme driven by CSS variables
+- Export to JSON and CSV; validated JSON import; data saved in localStorage
 
-## React Compiler
+## Tech
+React 19, Vite, plain CSS (no UI library, no chart library), native HTML5 drag and drop.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Architecture
+- `reducers/workspaceReducer.js`: every data change is a named action (pure, easy to test)
+- `context/`: `WorkspaceContext` (saved data) and `UIContext` (view, filters, dialogs, toast)
+- `hooks/`: `useDragAndDrop`, `useBoardStats`, `useKeyboardShortcuts`, `useCommands`, `useTheme`
+- `utils/`: pure helpers (`stats`, `filters`, `dropPosition`, `sanitizeWorkspace`, exporters)
+- `components/`: one folder per component, each with its own CSS
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+```bash
+npm install
+npm run dev
+```

@@ -1,0 +1,8 @@
+.palette-backdrop { align-items: start; padding-top: 14vh; }
+.palette { width: 100%; max-width: 520px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); overflow: hidden; }
+.palette input { width: 100%; padding: 14px 16px; border: 0; border-bottom: 1px solid var(--border); background: transparent; color: var(--text); font-size: 1rem; outline: none; }
+.palette ul { max-height: 320px; margin: 0; padding: 6px; overflow-y: auto; list-style: none; }
+.palette li { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-radius: 8px; color: var(--text); cursor: pointer; }
+.palette li.active { background: var(--accent-soft); color: var(--accent); }
+.palette-empty { color: var(--muted); cursor: default; }
+kbd { padding: 1px 7px; border: 1px solid var(--border-strong); border-radius: 5px; background: var(--surface-soft); color: var(--muted); font: 0.78rem 'DM Sans', sans-serif; }
