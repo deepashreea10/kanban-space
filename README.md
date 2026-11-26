@@ -1,6 +1,6 @@
 # Kanbanspace
 
-A multi-board Kanban workspace built with React and Vite. Live demo: **ADD-YOUR-VERCEL-LINK**
+A multi-board Kanban workspace built with React and Vite. Live demo: https://kanban-space-pi.vercel.app/
 
 ![Board view](docs/board.png)
 ![Analytics view](docs/analytics.png)
