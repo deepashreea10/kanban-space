@@ -1,0 +1,16 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--nav-text);
+  box-shadow: var(--shadow-panel);
+}
+
+.theme-toggle:hover {
+  background: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
+}

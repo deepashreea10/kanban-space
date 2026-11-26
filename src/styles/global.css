@@ -1,0 +1,43 @@
+@import './tokens.css';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'DM Sans', system-ui, 'Segoe UI', sans-serif;
+  font-synthesis: none;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--text);
+  background: var(--page);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
