@@ -2,8 +2,10 @@
 
 A multi-board Kanban workspace built with React and Vite. Live demo: https://kanban-space-pi.vercel.app/
 
-![Board view](docs/board.png)
-![Analytics view](docs/analytics.png)
+![Light theme](light.png)
+![Dark theme](dark.png)
+![Analytics](analytics.png)
+![Command palette](palette.png)
 
 ## Features
 - Multiple boards with add, rename and delete columns
