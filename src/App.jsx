@@ -1,5 +1,6 @@
 import { useTheme } from './hooks/useTheme';
 import { WorkspaceProvider } from './context/WorkspaceProvider';
+import { UIProvider } from './context/UIProvider';
 import Sidebar from './components/Sidebar/Sidebar';
 import Board from './components/Board/Board';
 import './App.css';
@@ -9,10 +10,12 @@ function App() {
   const { theme, toggleTheme } = useTheme();
   return (
     <WorkspaceProvider>
-      <div className="app">
-        <Sidebar theme={theme} onToggleTheme={toggleTheme} />
-        <Board />
-      </div>
+      <UIProvider>
+        <div className="app">
+          <Sidebar theme={theme} onToggleTheme={toggleTheme} />
+          <Board />
+        </div>
+      </UIProvider>
     </WorkspaceProvider>
   );
 }

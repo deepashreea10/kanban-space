@@ -1,0 +1,9 @@
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.view-tabs { display: flex; gap: 4px; padding: 3px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.view-tabs button { padding: 6px 14px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); }
+.view-tabs button.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.filters input, .filters select { padding: 7px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); }
+.filters input:focus, .filters select:focus { outline: 2px solid var(--focus-ring); border-color: var(--accent); }
+.filters .clear { padding: 7px 12px; border: 0; border-radius: 8px; background: transparent; color: var(--ghost-text); }
+.task-count { color: var(--muted); font-size: 0.85rem; }

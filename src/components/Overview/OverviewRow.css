@@ -1,0 +1,7 @@
+.overview-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+.overview-item { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-panel); }
+.overview-item span { color: var(--muted); font-size: 0.82rem; }
+.overview-item strong { font: 700 1.5rem 'Manrope', sans-serif; }
+.progress-track { height: 6px; margin-top: 6px; border-radius: 6px; background: var(--border); overflow: hidden; }
+.progress-track div { height: 100%; background: var(--success); transition: width 0.3s; }
+@media (max-width: 700px) { .overview-row { grid-template-columns: 1fr; } }
