@@ -1,0 +1,19 @@
+.column.over { outline: 2px dashed var(--accent); outline-offset: -2px; }
+.column-actions { display: flex; }
+.rename-input { flex: 1; min-width: 0; padding: 3px 6px; border: 1px solid var(--accent); border-radius: 6px; background: var(--field-bg); color: var(--text); }
+.confirm-inline { display: flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--danger); }
+.confirm-inline button { padding: 2px 8px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface); color: var(--text); }
+.confirm-note { margin: 0 4px 8px; color: var(--muted); font-size: 0.78rem; }
+.drop-indicator { height: 4px; margin: 2px 0 8px; border-radius: 4px; background: var(--accent); }
+.add-task-inline { width: 100%; margin-top: 8px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: var(--ghost-text); text-align: left; }
+.add-task-inline:hover { background: var(--ghost-hover-bg); color: var(--ghost-hover-text); }
+.task-slot { display: block; }
+.board-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+.board-head .board-title { margin: 0; }
+.btn-primary { padding: 9px 16px; border: 0; border-radius: 9px; background: var(--primary); color: var(--on-primary); box-shadow: var(--btn-shadow); font-weight: 600; }
+.btn-primary:hover { background: var(--primary-hover); }
+.add-column { flex: 0 0 240px; }
+.add-column > button { width: 100%; padding: 12px; border: 1px dashed var(--border-strong); border-radius: 12px; background: transparent; color: var(--muted); }
+.add-column form { display: flex; gap: 6px; }
+.add-column input { flex: 1; min-width: 0; padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); }
+.add-column form button { padding: 8px 12px; border: 0; border-radius: 8px; background: var(--primary); color: var(--on-primary); }

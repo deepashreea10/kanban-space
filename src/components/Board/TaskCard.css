@@ -1,0 +1,8 @@
+.task-card { cursor: grab; }
+.task-card.dragging { opacity: 0.4; }
+.task-title-btn { padding: 0; border: 0; background: none; color: inherit; font: inherit; font-weight: 700; text-align: left; }
+.task-title-btn:hover { color: var(--accent); }
+.subtask-meter { margin-bottom: 10px; color: var(--muted); font-size: 0.8rem; }
+.meter-track { height: 4px; margin-top: 4px; border-radius: 4px; background: var(--border); overflow: hidden; }
+.meter-track div { height: 100%; background: var(--success); }
+.due.overdue { color: var(--danger); font-weight: 600; }

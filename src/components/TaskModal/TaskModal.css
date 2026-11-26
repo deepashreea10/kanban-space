@@ -1,0 +1,20 @@
+.task-form { display: flex; flex-direction: column; gap: 12px; }
+.task-form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; font-weight: 600; }
+.task-form input:not([type='checkbox']), .task-form textarea, .task-form select { padding: 8px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); font-weight: 400; }
+.task-form input:focus, .task-form textarea:focus, .task-form select:focus { outline: 2px solid var(--focus-ring); border-color: var(--accent); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.subtasks { margin: 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; }
+.subtasks legend { padding: 0 6px; font-size: 0.85rem; font-weight: 600; }
+.subtask { display: flex; align-items: center; justify-content: space-between; }
+.subtask label { flex-direction: row; align-items: center; gap: 8px; font-weight: 400; }
+.subtask .done { color: var(--muted); text-decoration: line-through; }
+.subtask-add { display: flex; gap: 6px; margin-top: 8px; }
+.subtask-add input { flex: 1; min-width: 0; padding: 7px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); }
+.subtask-add button { padding: 7px 12px; border: 1px solid var(--outline-border); border-radius: 8px; background: var(--outline-bg); color: var(--outline-text); }
+.form-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+.form-actions button { padding: 8px 14px; border-radius: 8px; border: 1px solid transparent; }
+.form-actions .primary { background: var(--primary); color: var(--on-primary); }
+.form-actions .primary:hover { background: var(--primary-hover); }
+.form-actions .ghost { background: transparent; border-color: var(--border-strong); color: var(--text); }
+.form-actions .danger-ghost { margin-right: auto; background: transparent; color: var(--danger); }
+.form-actions .danger { margin-right: auto; background: var(--danger); color: #fff; }
