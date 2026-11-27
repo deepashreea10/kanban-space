@@ -1,0 +1,195 @@
+/* ── Shell ── */
+.mobile-board {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: var(--page);
+  overflow: hidden;
+}
+
+/* ── Top bar ── */
+.mobile-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.mobile-board-name {
+  font: 700 1rem 'Manrope', sans-serif;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.m-icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.m-icon-btn:hover {
+  background: var(--icon-hover-bg);
+  color: var(--icon-hover-text);
+}
+
+.mobile-new-btn {
+  padding: 7px 14px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ── Column tabs ── */
+.col-tabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.col-tabs::-webkit-scrollbar { display: none; }
+
+.col-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 0.88rem;
+}
+
+.col-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+.col-tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.col-tab-count {
+  padding: 1px 7px;
+  border-radius: 99px;
+  background: var(--count-bg);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* ── Filter bar ── */
+.mobile-filter-bar {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.mobile-filter-bar input {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: var(--field-bg);
+  color: var(--text);
+}
+
+.mobile-filter-bar button {
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ghost-text);
+}
+
+/* ── Task list ── */
+.mobile-task-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Make cards non-draggable on mobile */
+.mobile-task-list .task-card {
+  cursor: pointer;
+}
+
+/* ── Empty state ── */
+.mobile-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 16px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.mobile-empty button {
+  padding: 10px 20px;
+  border: 1px dashed var(--border-strong);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ghost-text);
+}
+
+/* ── FAB ── */
+.mobile-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--on-primary);
+  font-size: 1.6rem;
+  box-shadow: 0 4px 16px rgba(86, 56, 200, 0.4);
+}
+
+/* ── Mobile scroll area (analytics) ── */
+.mobile-scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,57 @@
+.hamburger {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.hamburger:hover { background: var(--icon-hover-bg); color: var(--icon-hover-text); }
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(15, 16, 24, 0.5);
+}
+
+.drawer {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 41;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(80vw, 280px);
+  padding: 20px 16px;
+  background: var(--sidebar);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+}
+
+.drawer-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.drawer-bottom { margin-top: auto; }
+.drawer-bottom .theme-toggle { width: 100%; }
+
+/* Re-use sidebar styles */
+.drawer .brand { font: 700 1.1rem 'Manrope', sans-serif; }
+.drawer .brand-light { font-weight: 500; color: var(--muted); }
+.drawer .nav-heading { display: flex; align-items: center; justify-content: space-between; color: var(--muted); font-size: 0.8rem; font-weight: 600; }
+.drawer .board-create { display: flex; gap: 6px; }
+.drawer .board-create input { flex: 1; min-width: 0; padding: 7px 10px; border: 1px solid var(--border-strong); border-radius: 8px; background: var(--field-bg); color: var(--text); }
+.drawer .board-create button { padding: 7px 12px; border: 0; border-radius: 8px; background: var(--primary); color: var(--on-primary); }
+.drawer nav { display: flex; flex-direction: column; gap: 4px; }
+.drawer .board-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border: 0; border-radius: 9px; background: transparent; color: var(--nav-text); text-align: left; }
+.drawer .board-link:hover { background: var(--nav-hover-bg); color: var(--nav-hover-text); }
+.drawer .board-link.active { background: var(--nav-active-bg); color: var(--nav-active-text); font-weight: 600; }
+.drawer .icon-btn { width: 26px; height: 26px; border: 0; border-radius: 7px; background: transparent; color: var(--muted); font-size: 1.1rem; }
+.drawer .icon-btn:hover { background: var(--icon-hover-bg); color: var(--icon-hover-text); }

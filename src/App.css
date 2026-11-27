@@ -1,2 +1,16 @@
-.app { display: flex; min-height: 100vh; }
-@media (max-width: 700px) { .app { flex-direction: column; } }
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.mobile-app {
+  flex-direction: column;
+  height: 100dvh;        /* dynamic viewport height: excludes browser chrome */
+  overflow: hidden;
+}
+
+/* The hamburger lives in MobileBoard's topbar, not in a separate bar.
+   mobile-topbar-wrap is hidden; MobileSidebar renders its own button. */
+.mobile-topbar-wrap {
+  display: none;
+}
