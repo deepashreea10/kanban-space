@@ -3,7 +3,7 @@
 A multi-board Kanban workspace built with React and Vite. Live demo: https://kanban-space-pi.vercel.app/
 
 ![Light theme](light.png)
-![Dark theme](dark.png)
+![Dark Mode](dark.png?v=2)
 ![Analytics](analytics.png)
 ![Command palette](palette.png)
 
